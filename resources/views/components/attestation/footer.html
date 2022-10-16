@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><script>
+        function subst() {
+            var vars = {};
+            var query_strings_from_url = document.location.search.substring(1).split('&');
+            for (var query_string in query_strings_from_url) {
+                if (query_strings_from_url.hasOwnProperty(query_string)) {
+                    var temp_var = query_strings_from_url[query_string].split('=', 2);
+                    vars[temp_var[0]] = decodeURI(temp_var[1]);
+                }
+            }
+            var css_selector_classes = ['page', 'frompage', 'topage', 'webpage', 'section', 'subsection', 'date', 'isodate', 'time', 'title', 'doctitle', 'sitepage', 'sitepages'];
+            for (var css_class in css_selector_classes) {
+                if (css_selector_classes.hasOwnProperty(css_class)) {
+                    var element = document.getElementsByClassName(css_selector_classes[css_class]);
+                    for (var j = 0; j < element.length; ++j) {
+                        element[j].textContent = vars[css_selector_classes[css_class]];
+                    }
+                }
+            }
+        }
+    </script></head>
+<body style="border:0; margin: 0; font-size: 8pt;" onload="subst()">
+<hr>
+<p colspan="2" class="text-muted" style="text-align: center">Ce justificatif permet les v&eacute;rifications d'immatriculation impos&eacute;es par l'article R.2143-9 du d&eacute;cret n&deg; 2018-1075 du 3 d&eacute;cembre 2018 <br>et l'article D8222-5 du Code du travail modifi&eacute; par le d&eacute;cret n&deg;2011-1601 du 21 novembre 2011-art 1</p>
+<table style="width: 100%">
+    <tr>
+        <td>
+            <span class="section"></span><br>
+            <span class="date"></span>
+        </td>
+        <td style="text-align:right">
+            Page <span class="page"></span> / <span class="topage"></span><br>
+            Attestation Valid&eacute;e par <strong>Solution-Attestaions &copy;</strong>
+        </td>
+    </tr>
+</table>
+</body></html>

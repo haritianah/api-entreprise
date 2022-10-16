@@ -1,0 +1,78 @@
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-01-01 13:00:00`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+
+
+# =========================== MUTATION ===========================#
+#type Mutation {
+#    createUser(name: String!): User!
+#    updateUser(id: ID!, name: String!): User
+#    deleteUser(id: ID!): User
+#}
+# =========================== QUERY ===========================#
+
+
+type Query {
+    user(id: ID @eq): User
+
+    users: [User!]!
+
+    posts: [Post!]
+
+    post(id: ID @eq): Post
+
+    apiSirenStates: ApiSirenStates
+
+    apiSirenCount(queries: String = ""): Int
+
+
+    hello(name: String!): String
+
+    greet(name: String!): String
+}
+
+
+# =========================== TYPAGE ===========================
+#type User {
+#    id: ID!
+#    name: String!
+#    email: String!
+#    created_at: DateTimete
+#    updated_at: DateTime
+##    post: [Post!] @hasMany
+##    phone: Phone @hasOneres
+#}
+
+type User {
+    id: ID!
+    name: String!
+    posts: [Post!]
+}
+
+type Post {
+    id: ID!
+    title: String
+    content: String
+    published: Boolean
+    user_id: String
+    author: User
+}
+
+type ApiSirenStates{
+    etatService : String
+    versionService: String
+    journalDesModifications: String
+    datesDernieresMisesAJourDesDonnees : [DateMajDonnee]
+}
+
+
+type DateMajDonnee{
+    collection: String
+    dateDerniereMiseADisposition: DateTime
+    dateDernierTraitementMaximum: DateTime
+    dateDernierTraitementDeMasse: DateTime
+
+}

@@ -1,0 +1,51 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@vue/cli-plugin-babel": "^3.4.0",
+        "@vue/cli-plugin-eslint": "^3.4.0",
+        "@vue/cli-plugin-pwa": "^3.4.0",
+        "@vue/cli-service": "^3.4.0",
+        "apollo-cache-inmemory": "^1.6.0",
+        "apollo-client": "^2.6.0",
+        "apollo-link": "^1.2.11",
+        "apollo-link-http": "^1.5.14",
+        "axios": "^0.18.1",
+        "bootstrap": "^3.4.1",
+        "chart.js": "^2.7.3",
+        "graphql": "^14.3.1",
+        "graphql-tag": "^2.10.1",
+        "jquery": "^3.2",
+        "laravel-mix": "^6.0.12",
+        "lodash": "^4.17.15",
+        "popper.js": "^1.12",
+        "register-service-worker": "^1.5.2",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.6.6",
+        "vue-apollo": "^3.0.0-beta.30",
+        "vue-chartjs": "^3.4.0",
+        "vue-cli-plugin-i18n": "^0.5.1",
+        "vue-i18n": "^8.8.1",
+        "vue-router": "^3.0.2",
+        "vue-router-prefetch": "^1.4.0",
+        "vue-template-compiler": "^2.6.10",
+        "vue2-transitions": "^0.2.3",
+        "webpack-cli": "^3.3.7",
+        "postcss": "^8.2.8"
+    },
+    "dependencies": {
+        "apollo-boost": "^0.4.0",
+        "dev": "^0.1.3"
+    }
+}
